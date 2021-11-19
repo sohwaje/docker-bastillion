@@ -27,7 +27,7 @@ agentForwarding={{ default .Env.AGENT_FORWARDING "false" }}
 #enable two-factor authentication with a one-time password - 'required', 'optional', or 'disabled'
 oneTimePassword={{ default .Env.ONE_TIME_PASSWORD "optional" }}
 #set to false to disable key management. If false, the Bastillion public key will be appended to the authorized_keys file (instead of it being overwritten completely).
-keyManagementEnabled={{ default .Env.KEY_MANAGEMENT_ENABLED "true" }}
+keyManagementEnabled={{ default .Env.KEY_MANAGEMENT_ENABLED "false" }}
 #set to true to generate keys when added/managed by users and enforce strong passphrases set to false to allow users to set their own public key
 forceUserKeyGeneration={{ default .Env.FORCE_USER_KEY_GENERATION "true" }}
 #authorized_keys refresh interval in minutes (no refresh for <=0)
@@ -41,7 +41,7 @@ clientIPHeader={{ .Env.CLIENT_IP_HEADER }}
 #specify a external authentication module (ex: ldap-ol, ldap-ad).  Edit the jaas.conf to set connection details
 jaasModule=
 #The session time out value of application in minutes
-sessionTimeout={{ default .Env.SESSION_TIMEOUT "15" }}
+sessionTimeout={{ default .Env.SESSION_TIMEOUT "120" }}
 #Requires JDK with "Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files" installed - http://www.oracle.com/technetwork/java/javase/downloads/index.html
 use256EncryptionKey=false
 
